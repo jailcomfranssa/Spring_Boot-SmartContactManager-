@@ -16,7 +16,7 @@
 </head>
 <body class="dark:bg-gray-900 dark:text-white">
     <!-- header-->
-    <div data-th-replace="navbar :: navbar"></div>
+    <div data-th-replace="~{navbar :: navbar}"></div>
     <!--Main content -->
     <div class="p-4">
         <section data-th-replace="${content}"></section>
