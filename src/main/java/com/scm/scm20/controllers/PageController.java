@@ -4,45 +4,49 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Controller
 public class PageController {
+    private static final Logger logger = LoggerFactory.getLogger(PageController.class);
 
     @RequestMapping("/home")
     public String home(Model model){
-        System.out.println("Home page handler");
+        logger.info("home page handler");
         model.addAttribute("title", "Home-pagina Inicial ");
         return "home";
     }
 
     @RequestMapping("/about")
     public String aboutPage(){
-        System.out.println("About page handler");
+        logger.info("about page handler");
         return "about";
     }
 
     @RequestMapping("/services")
     public String servicesPage(){
-        System.out.println("services page handler");
+        logger.info("services page handler");
         return "services";
     }
 
     @GetMapping("/contact")
     public String contactPage(){
-        System.out.println("contact page handler");
-        return new String("contact");
+        logger.info("contact page handler");
+        return "contact";
     }
 
     @GetMapping("/login")
     public String loginPage(){
-        System.out.println("login page handler");
-        return new String("login");
+        logger.info("login page handler");
+        return "login";
     }
 
     @GetMapping("/register")
     public String registerPage(){
-        System.out.println("register page handler");
-        return new String("register");
+        logger.info("register page handler");
+        return "register";
     }
 }
+
+
